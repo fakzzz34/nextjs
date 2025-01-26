@@ -13,9 +13,6 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
 
     const user = await client.fetch(AUTHOR_BY_ID_QUERY, { id });
 
-    console.log(user);
-    console.log("session user id : ", session.id);
-
     if (!user) return notFound();
 
     return (
